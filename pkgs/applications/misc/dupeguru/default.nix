@@ -1,7 +1,7 @@
 {
   stdenv,
   lib,
-  python3Packages,
+  python312,
   gettext,
   qt5,
   fetchFromGitHub,
@@ -26,12 +26,12 @@ python3Packages.buildPythonApplication rec {
 
   nativeBuildInputs = [
     gettext
-    python3Packages.pyqt5
-    python3Packages.setuptools
+    python312.pkgs.pyqt5
+    python312.pkgs.setuptools
     qt5.wrapQtAppsHook
   ];
 
-  propagatedBuildInputs = with python3Packages; [
+  propagatedBuildInputs = with python312.pkgs; [
     hsaudiotag3k
     mutagen
     polib
@@ -47,7 +47,7 @@ python3Packages.buildPythonApplication rec {
     "NO_VENV=1"
   ];
 
-  nativeCheckInputs = with python3Packages; [
+  nativeCheckInputs = with python312.pkgs; [
     pytestCheckHook
   ];
 
