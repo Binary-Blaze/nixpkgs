@@ -34,7 +34,7 @@
   cmocka,
   rpcsvc-proto,
   bash,
-  python3Packages,
+  python312Packages,
   pkgsHostTarget,
   nixosTests,
   libiconv,
@@ -113,11 +113,11 @@ stdenv.mkDerivation (finalAttrs: {
   ];
 
   nativeBuildInputs = [
-    python3Packages.python
-    # Not `python3Packages.wrapPython` to workaround
-    # `python3Packages.wrapPython.__spliced.buildHost` having the wrong
+    python312Packages.python
+    # Not `python312Packages.wrapPython` to workaround
+    # `python312Packages.wrapPython.__spliced.buildHost` having the wrong
     # `pythonHost`. See https://github.com/NixOS/nixpkgs/issues/434307
-    pkgsHostTarget.python3Packages.wrapPython
+    pkgsHostTarget.python312Packages.wrapPython
     wafHook
     pkg-config
     bison
@@ -144,7 +144,7 @@ stdenv.mkDerivation (finalAttrs: {
 
   buildInputs = [
     bash
-    python3Packages.python
+    python312Packages.python
     readline
     popt
     dbus
@@ -167,7 +167,7 @@ stdenv.mkDerivation (finalAttrs: {
   ++ optionals stdenv.hostPlatform.isDarwin [ libiconv ]
   ++ optionals enableLDAP [
     openldap.dev
-    python3Packages.markdown
+    python312Packages.markdown
   ]
   ++ optionals (!enableLDAP && stdenv.hostPlatform.isLinux) [
     ldb
@@ -178,7 +178,7 @@ stdenv.mkDerivation (finalAttrs: {
   ++ optional enableMDNS avahi
   ++ optionals enableDomainController [
     gpgme
-    python3Packages.dnspython
+    python312Packages.dnspython
   ]
   ++ optional enableRegedit ncurses
   ++ optional (enableCephFS && stdenv.hostPlatform.isLinux) (lib.getDev ceph)
@@ -233,7 +233,7 @@ stdenv.mkDerivation (finalAttrs: {
     "--disable-rpath"
     # otherwise third_party/waf/waflib/Tools/python.py would
     # get the wrong pythondir from build platform python
-    "--pythondir=${placeholder "out"}/${python3Packages.python.sitePackages}"
+    "--pythondir=${placeholder "out"}/${python312Packages.python.sitePackages}"
     (lib.enableFeature enablePrinting "cups")
   ]
   ++ optional (!enableDomainController) "--without-ad-dc"
@@ -270,8 +270,8 @@ stdenv.mkDerivation (finalAttrs: {
   ];
 
   pythonPath = [
-    python3Packages.dnspython
-    python3Packages.markdown
+    python312Packages.dnspython
+    python312Packages.markdown
     tdb
   ];
 
@@ -320,7 +320,7 @@ stdenv.mkDerivation (finalAttrs: {
   '';
 
   disallowedReferences = lib.optionals isCross [
-    buildPackages.python3Packages.python
+    buildPackages.python312Packages.python
     buildPackages.runtimeShellPackage
   ];
 
