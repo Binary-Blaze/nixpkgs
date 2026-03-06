@@ -10,7 +10,7 @@
 
 let
   pname = "jetbrains-toolbox";
-  version = "3.1.0.62320";
+  version = "3.3.1.75249";
 
   updateScript = ./update.sh;
 
