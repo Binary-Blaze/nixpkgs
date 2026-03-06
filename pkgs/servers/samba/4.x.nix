@@ -81,7 +81,7 @@ let
 in
 stdenv.mkDerivation (finalAttrs: {
   pname = "samba";
-  version = "4.22.7";
+  version = "4.23.6";
 
   src = fetchurl {
     url = "https://download.samba.org/pub/samba/stable/samba-${finalAttrs.version}.tar.gz";
