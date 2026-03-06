@@ -73,7 +73,7 @@
   oath-toolkit,
   openldap,
   parted,
-  python311, # to get an idea which Python versions are supported by Ceph, see upstream `do_cmake.sh` (see `PYBUILD=` variable)
+  python313, # to get an idea which Python versions are supported by Ceph, see upstream `do_cmake.sh` (see `PYBUILD=` variable)
   rdkafka,
   rocksdb,
   snappy,
@@ -231,7 +231,7 @@ let
     };
 
   # Watch out for python <> boost compatibility
-  python = python311.override {
+  python = python313.override {
     self = python;
     packageOverrides =
       self: super:
