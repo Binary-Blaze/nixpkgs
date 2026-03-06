@@ -377,7 +377,7 @@ let
   version = "20.1.1";
   src = fetchurl {
     url = "https://download.ceph.com/tarballs/ceph-${version}.tar.gz";
-    hash = "sha256-zlgp28C81SZbaFJ4yvQk4ZgYz4K/aZqtcISTO8LscSU=";
+    hash = "sha256-0DY4xsLTORvoTpaDQA/STKZVfif+aAjOCIGSOujZTSw=";
   };
 in
 stdenv.mkDerivation {
