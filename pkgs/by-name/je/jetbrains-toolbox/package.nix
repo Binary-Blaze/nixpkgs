@@ -55,7 +55,7 @@ let
         aarch64 = "-arm64";
       };
       hash = selectSystem {
-        x86_64-linux = "sha256-Fmnj1mYMpsiBpnERiWPAwQaH7qLqkrTICn0mxX0h+2U=";
+        x86_64-linux = "sha256-X8haw3w4yMdcRgh1kL+muobFfxhgW7pHXnLe7HV0WWo=";
         aarch64-linux = "sha256-ogLaPN9nxZFQ09qmIF2mEi5o9LVgjoGtmYclc6KmrNU=";
         x86_64-darwin = "sha256-hO5J9I8ZrzsgGtb9dMg2SeI/PrxpkFRjDRUdrjqMnPw=";
         aarch64-darwin = "sha256-xA0LbwDKR6/64K9uUJHvrPC+0mRLGM/axz8+Knc+X8A=";
