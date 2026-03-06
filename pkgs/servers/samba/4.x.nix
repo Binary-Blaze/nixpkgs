@@ -85,7 +85,7 @@ stdenv.mkDerivation (finalAttrs: {
 
   src = fetchurl {
     url = "https://download.samba.org/pub/samba/stable/samba-${finalAttrs.version}.tar.gz";
-    hash = "sha256-EhlYEdRUL2YVNukFW0TVjFMCBBK+r6riBeInv3L2pJc=";
+    hash = "sha256-49q9i15C3Jdmn6D67wMlEKlOSWtY9wZwguUDbYjw5wI=";
   };
 
   outputs = [
