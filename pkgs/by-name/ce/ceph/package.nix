@@ -206,7 +206,7 @@ let
   };
 
   ceph-common =
-    with python12.pkgs;
+    with python312.pkgs;
     buildPythonPackage {
       pname = "ceph-common";
       format = "setuptools";
