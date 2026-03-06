@@ -206,7 +206,7 @@ let
   };
 
   ceph-common =
-    with python.pkgs;
+    with python12.pkgs;
     buildPythonPackage {
       pname = "ceph-common";
       format = "setuptools";
@@ -330,7 +330,7 @@ let
   };
 
   # TODO: split this off in build and runtime environment
-  ceph-python-env = python.withPackages (
+  ceph-python-env = python312.withPackages (
     ps: with ps; [
       ceph-common
 
@@ -374,7 +374,7 @@ let
   );
   inherit (ceph-python-env.python) sitePackages;
 
-  version = "19.2.3";
+  version = "20.1.1";
   src = fetchurl {
     url = "https://download.ceph.com/tarballs/ceph-${version}.tar.gz";
     hash = "sha256-zlgp28C81SZbaFJ4yvQk4ZgYz4K/aZqtcISTO8LscSU=";
