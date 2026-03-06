@@ -44,7 +44,7 @@ buildPythonPackage rec {
   version = "9.1.0";
   pyproject = true;
 
-  disabled = pythonOlder "3.12";
+  disabled = pythonOlder "3.11";
 
   src = fetchFromGitHub {
     owner = "sphinx-doc";
